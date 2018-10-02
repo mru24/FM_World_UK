@@ -16,6 +16,8 @@ export default {
 }
 </script>
 <style lang="sass">
+  *
+    box-sizing: border-box
   body
     font-family: 'Montserrat', sans-serif
 </style>

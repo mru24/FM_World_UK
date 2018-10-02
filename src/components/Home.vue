@@ -1,35 +1,69 @@
 <template>
   <div>
     <div class="container">
-      <div class="row my-5">
-        <div class="col-lg-6">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="row">
+        <div class="col-lg-6 my-4">
+          <div class="image">
+            <img src="../assets/images/Fragrances_resize.jpg" alt="" width="100%">
+            <div class="info">
+              <infoContent />
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div class="col-lg-6 my-4">
+          <div class="image">
+            <img src="../assets/images/FaceAndBody_Care_resize.jpg" alt="" width="100%">
+            <div class="info">
+              <infoContent />
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row my-5">
-        <div class="col-lg-6">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="row">
+        <div class="col-lg-6 my-4">
+          <div class="image">
+            <img src="../assets/images/Makeup_resize.jpg" alt="" width="100%">
+            <div class="info">
+              <infoContent />
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div class="col-lg-6 my-4">
+          <div class="image">
+            <img src="../assets/images/Nutricode_resize.jpg" alt="" width="100%">
+            <div class="info">
+              <infoContent />
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row my-5">
-        <div class="col-lg-6">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <div class="row">
+        <div class="col-lg-6 my-4">
+          <div class="image">
+            <img src="../assets/images/SmartAndClean_resize.jpg" alt="" width="100%">
+            <div class="info">
+              <infoContent />
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div class="col-lg-6 my-4">
+          <div class="image">
+            <img src="../assets/images/Aurile_resize.jpg" alt="" width="100%">
+            <div class="info">
+              <infoContent />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import infoContent from './infoContent'
 export default {
+  components: {
+    infoContent
+  },
   data () {
     return {
 
@@ -40,9 +74,30 @@ export default {
       $('body').hide()
       $('body').fadeIn(1200)
     })
+    $('.image').mouseenter(function () {
+      $('img', this).animate({opacity: 0.1})
+      $('.info', this).animate({opacity: 1, width: '100%', height: '100%'})
+    })
+    $('.image').mouseleave(function () {
+      $('img', this).animate({opacity: 1})
+      $('.info', this).animate({opacity: 0, width: '10%', height: '10%'})
+    })
   }
 }
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass" scoped>
+.image
+  position: relative
+  img
+  .info
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 10%
+    height: 10%
+    display: flex
+    justify-content: center
+    align-items: center
+    opacity: 0
 </style>
