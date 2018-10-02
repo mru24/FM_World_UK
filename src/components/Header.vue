@@ -7,7 +7,7 @@
       <div class="navigation">
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="nav_logo_image">
-            <img src="../assets/images/FM_World_UK_logo.jpg" alt="FMWorld UK Logo" height="40">
+            <img src="../assets/images/FM_World_UK_logo.jpg" alt="FMWorld UK Logo" height="30">
           </div>
 
           <!-- <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"> -->
@@ -110,17 +110,17 @@ h6
 
 // NAVBAR HAMBURGER STYLING
 .icon
-  width: 50px
-  height: 45px
+  width: 35px
+  height: 35px
   background: transparent
-  border-radius: 8px
+  border-radius: 5px
   position: relative
   .hamburger
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%,-50%)
-    width: 95%
+    width: 100%
     height: 5px
     background: #aaa
     box-shadow: 0 2px 5px rgba(0,0,0,.2)
@@ -134,9 +134,9 @@ h6
       box-shadow: 0 2px 5px rgba(0,0,0,.2)
       transition: .5s
     &::before
-      top: -16px
+      top: -12px
     &::after
-      top: 16px
+      top: 12px
   &:hover .hamburger, &:hover .hamburger::before, &:hover .hamburger::after
     background: #444
 .icon.active
