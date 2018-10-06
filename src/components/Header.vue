@@ -21,17 +21,25 @@
 
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav mx-auto">
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#">SHOP ONLINE</a>
-              </li> -->
               <li class="nav-item">
-                <a class="nav-link" href="#">SMART START OFFER</a>
+                <router-link :to="'/'" class="nav-link">
+                  <img src="../assets/images/home.png" alt="FMWorld Logo Small" height="25"> HOME
+                </router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">YOUR LOCAL <img src="../assets/images/FMLogo_small.jpg" alt="FMWorld Logo Small" height="25"> CONSULTANT</a>
+                <router-link :to="'/SmartStart'" class="nav-link">
+                  SMART START OFFER
+                </router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">CUSTOMER LOGIN / REGISTRATION</a>
+                <router-link :to="'/About'" class="nav-link">
+                  YOUR LOCAL<br>
+                  <img src="../assets/images/FMLogo_small.jpg" alt="FMWorld Logo Small" height="25"><br>
+                  CONSULTANT
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://www.joinforfree.me.uk" target="_blank" rel="noreferrer nofollow noopener">JOIN US</a>
               </li>
             </ul>
           </div>
@@ -87,7 +95,7 @@ export default {
       align-items: center
       justify-content: center
       text-align: center
-      width: 33%
+      width: 25%
       border-right: $border
       &:last-child
         border: none
