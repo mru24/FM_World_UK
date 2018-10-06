@@ -4,10 +4,7 @@
       <h4 class="mt-5">About Me</h4>
       <div class="content">
         <div class="row my-5">
-          <div class="col-lg-3 my-2">
-            <img v-for="image in images" :key="image" :src="image.imageSrc" :alt="image.alt" data-toggle="modal" data-target="#imgModal1" class="mb-2 img-fluid mainImg" @click="showInModal(image.imageLg, image.alt)" style="width:100%;max-width:300px;">
-          </div>
-          <div class="col-lg-9 p-5 infoText">
+          <div class="col-lg-8 p-4 infoText order-lg-last">
             <p class="lead">
               Hi, my name is Katarzyna Kosmala.
             </p>
@@ -16,6 +13,17 @@
               My main goal is help people to change their life for the better.<br>
               I like reading books and walk.
             </p>
+            <div class="row align-items-center mt-5">
+              <div class="col-sm-3 offset-sm-2 lead">
+                Follow me:
+              </div>
+              <div class="col-sm-1">
+                <facebook />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 offset-lg-1 my-2">
+            <img v-for="(image, index) in images" :key="index" :src="image.imageSrc" :alt="image.alt" data-toggle="modal" data-target="#imgModal1" class="mb-2 img-fluid mainImg" @click="showInModal(image.imageLg, image.alt)" style="width:100%;max-width:300px;">
           </div>
         </div>
         <div class="row my-5">
@@ -46,7 +54,11 @@
 </template>
 
 <script>
+import facebook from './facebook'
 export default {
+  components: {
+    facebook
+  },
   data () {
     return {
       selectedImage: null,
@@ -79,5 +91,4 @@ export default {
   display: flex
   flex-direction: column
   justify-content: center
-
 </style>

@@ -55,14 +55,22 @@
           </div>
         </div>
       </div>
+      <animals />
+      <hr>
+      <catalogs />
     </div>
   </div>
 </template>
 <script>
 import infoContent from './infoContent'
+import animals from './animals'
+import catalogs from './catalogs'
+
 export default {
   components: {
-    infoContent
+    infoContent,
+    animals,
+    catalogs
   },
   data () {
     return {
@@ -84,7 +92,6 @@ export default {
 <style lang="sass" scoped>
 .image
   position: relative
-  img
   .info
     position: absolute
     top: 50%

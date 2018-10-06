@@ -3,7 +3,7 @@
     <div class="container">
       <h4 class="mt-5">FIRST 10 DAYS OFFER</h4>
       <div class="row my-5">
-        <div class="col-lg-4" v-for="image in images" :key="image">
+        <div class="col-lg-4" v-for="(image, index) in images" :key="index">
           <img v-bind:src="image" alt="Offer Image" class="img-fluid mainImg" data-toggle="modal" data-target="#imgModal" @click="showInModal(image)">
         </div>
       </div>
