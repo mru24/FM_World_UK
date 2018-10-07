@@ -2,21 +2,27 @@
   <div>
     <h2>ONLINE CATALOGUES</h2>
     <div class="row my-5 p-4 border bg-dark">
-      <div class="col-lg-2 offset-lg-3 bg-secondary">
-        <a href="https://pl.fmworld.com/pliki/presenter/966/" target="_blank" rel="noreferrer nofollow noopener">
+      <div class="col-lg-2 offset-lg-2 bg-secondary">
+        <a href="http://online.fliphtml5.com/zehio/bqxb/" target="_blank" rel="noreferrer nofollow noopener">
           <img src="../assets/images/cat-1.jpg" alt="" class="img-fluid">
           <div class="imageCover">click to open</div>
         </a>
       </div>
       <div class="col-lg-2 bg-secondary">
-        <a href="https://pl.fmworld.com/pliki/presenter/835/" target="_blank" rel="noreferrer nofollow noopener">
+        <a href="http://online.fliphtml5.com/zehio/wlge/" target="_blank" rel="noreferrer nofollow noopener">
           <img src="../assets/images/cat-2.jpg" alt="" class="img-fluid">
           <div class="imageCover">click to open</div>
         </a>
       </div>
       <div class="col-lg-2 bg-secondary">
-        <a href="https://pl.fmworld.com/pliki/presenter/911/" target="_blank" rel="noreferrer nofollow noopener">
+        <a href="http://online.fliphtml5.com/zehio/vrmi/" target="_blank" rel="noreferrer nofollow noopener">
           <img src="../assets/images/cat-3.jpg" alt="" class="img-fluid">
+          <div class="imageCover">click to open</div>
+        </a>
+      </div>
+      <div class="col-lg-2 bg-secondary">
+        <a href="http://online.fliphtml5.com/zehio/ibzg/" target="_blank" rel="noreferrer nofollow noopener">
+          <img src="../assets/images/cat-4.jpg" alt="" class="img-fluid">
           <div class="imageCover">click to open</div>
         </a>
       </div>
