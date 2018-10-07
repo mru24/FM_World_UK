@@ -25,7 +25,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="https://fmworld.com/en/statics/terms-of-service-1/">
+                  <a href="https://fmworld.com/en/statics/terms-of-service-1/" target="_blank" rel="noreferrer nofollow noopener">
                     Terms of Service
                   </a>
                 </li>
@@ -45,7 +45,7 @@
       <div class="row">
         <div class="col">
           <div class="copyrights">
-            Design and development: <a href="http://wwpoject.c0.pl">WWProject Studio &copy;2018</a>
+            Design and development: <a href="http://wwproject.c0.pl" target="_blank" rel="noreferrer nofollow noopener">WWProject Studio &copy;2018</a>
           </div>
         </div>
       </div>

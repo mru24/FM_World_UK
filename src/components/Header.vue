@@ -9,15 +9,12 @@
           <div class="nav_logo_image">
             <img src="../assets/images/FM_World_UK_logo.jpg" alt="FMWorld UK Logo" height="30">
           </div>
-
-          <!-- <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"> -->
+          <!-- Hamburger -->
           <div class="navTrigger navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" @click="toggleClass">
             <div class="icon" v-bind:class="{ active: isActive }">
               <div class="hamburger"></div>
             </div>
           </div>
-            <!-- <span class="navbar-toggler-icon"></span> -->
-          <!-- </button> -->
 
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav mx-auto">
@@ -82,8 +79,8 @@ export default {
     @include bp-mobile
       margin-top: 30px
       box-shadow: none
-      border-top: $border
-      border-bottom: $border
+      border-top: $borderLt
+      border-bottom: $borderLt
     .nav_logo_image
       display: none
       @include bp-mobile
@@ -96,7 +93,7 @@ export default {
       justify-content: center
       text-align: center
       width: 25%
-      border-right: $border
+      border-right: $borderLt
       &:last-child
         border: none
       @include bp-mobile

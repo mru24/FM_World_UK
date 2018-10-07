@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row m-4 p-4">
+    <div class="row m-lg-4 p-lg-4 ">
       <div class="col p-4">
         <h6>*IMPORTANT INFORMATION FOR ANIMALS LOVERS</h6>
         <p class="small">
@@ -20,4 +20,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import 'config'
+.col
+  border: $borderFt
 </style>

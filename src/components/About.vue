@@ -23,13 +23,13 @@
             </div>
           </div>
           <div class="col-lg-3 offset-lg-1 my-2">
-            <img v-for="(image, index) in images" :key="index" :src="image.imageSrc" :alt="image.alt" data-toggle="modal" data-target="#imgModal1" class="mb-2 img-fluid mainImg" @click="showInModal(image.imageLg, image.alt)" style="width:100%;max-width:300px;">
+            <div class="imageContainer">
+              <img v-for="(image, index) in images" :key="index" :src="image.imageSrc" :alt="image.alt" data-toggle="modal" data-target="#imgModal1" class="mb-2 img-fluid mainImg" @click="showInModal(image.imageLg, image.alt)">
+            </div>
           </div>
         </div>
         <div class="row my-5">
-          <div class="col-lg-3 my-2">
 
-          </div>
         </div>
       </div>
     </div>
@@ -79,14 +79,19 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.mainImg
-  display: block
-  margin: auto
-  border-radius: 10px
-  cursor: pointer
-  transition: .2s
-  &:hover
-    opacity: .7
+@import 'config'
+.imageContainer
+  .mainImg
+    display: block
+    width: 100%
+    max-width: 300px
+    margin: auto
+    border-radius: 10px
+    cursor: pointer
+    transition: .2s
+    &:hover
+      opacity: .7
+
 .infoText
   display: flex
   flex-direction: column

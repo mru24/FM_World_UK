@@ -2,6 +2,7 @@
   <div id="app">
     <appHeader />
     <router-view/>
+    <back-to-top text="Back to top" visibleoffset="150"></back-to-top>
     <appFooter />
   </div>
 </template>

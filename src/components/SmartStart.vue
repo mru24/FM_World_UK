@@ -4,7 +4,12 @@
       <h4 class="mt-5">FIRST 10 DAYS OFFER</h4>
       <div class="row my-5">
         <div class="col-lg-4" v-for="(image, index) in images" :key="index">
-          <img v-bind:src="image" alt="Offer Image" class="img-fluid mainImg" data-toggle="modal" data-target="#imgModal" @click="showInModal(image)">
+          <div class="imageContainer">
+            <img v-bind:src="image" alt="Offer Image" class="img-fluid mainImg" data-toggle="modal" data-target="#imgModal" @click="showInModal(image)">
+            <div class="imageCover">
+                <h5 class="lead">click to enlarge</h5>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -52,9 +57,35 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.mainImg
-  transition: .2s
-  cursor: pointer
-  &:hover
-    opacity: .7
+@import 'config'
+.imageContainer
+  .mainImg
+    margin: 10px auto
+    transition: .4s
+    cursor: pointer
+    border: $borderLt
+    position: relative
+    &:hover
+      opacity: .6
+  .imageCover
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%) scale(.1)
+    width: 70%
+    height: 70%
+    pointer-events: none
+    background: rgba(#ffffff, 0.95)
+    border: $borderFt
+    opacity: 0
+    transition: .5s
+    display: flex
+    justify-content: center
+    align-items: center
+    color: black
+
+.imageContainer:hover .imageCover
+  transform: translate(-50%,-50%) scale(1)
+  opacity: 1
+
 </style>
