@@ -1,57 +1,18 @@
 <template>
   <div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6 my-4">
-          <div class="image">
-            <img class="mainImg" src="../assets/images/Fragrances_resize.jpg" alt="" width="100%">
-            <div class="info">
-              <infoContent />
+      <div class="categories">
+        <div class="box" v-for="(cat, index) in categories" :key="index">
+          <div class="image" @mouseenter="cat.show=true" @mouseleave="cat.show=false">
+            <img class="mainImg" :src="cat.image" :alt="cat.name + 'image'" width="100%">
+            <div v-if="cat.show">
+              <transition name="showinfo">
+                <div class="info">
+                  <infoContent />
+                </div>
+              </transition>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-6 my-4">
-          <div class="image">
-            <img class="mainImg" src="../assets/images/FaceAndBody_Care_resize.jpg" alt="" width="100%">
-            <div class="info">
-              <infoContent />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 my-4">
-          <div class="image">
-            <img class="mainImg" src="../assets/images/Makeup_resize.jpg" alt="" width="100%">
-            <div class="info">
-              <infoContent />
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 my-4">
-          <div class="image">
-            <img class="mainImg" src="../assets/images/Nutricode_resize.jpg" alt="" width="100%">
-            <div class="info">
-              <infoContent />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 my-4">
-          <div class="image">
-            <img class="mainImg" src="../assets/images/SmartAndClean_resize.jpg" alt="" width="100%">
-            <div class="info">
-              <infoContent />
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 my-4">
-          <div class="image">
-            <img class="mainImg" src="../assets/images/Aurile_resize.jpg" alt="" width="100%">
-            <div class="info">
-              <infoContent />
-            </div>
+
           </div>
         </div>
       </div>
@@ -74,33 +35,82 @@ export default {
   },
   data () {
     return {
-      show: false
+      show: false,
+      categories: [
+        {
+          name: 'Fragrances',
+          image: 'static/images/Cat/Fragrances_resize.jpg',
+          show: false
+        },
+        {
+          name: 'Face And Body Care',
+          image: 'static/images/Cat/FaceAndBody_Care_resize.jpg',
+          show: false
+        },
+        {
+          name: 'Make Up',
+          image: 'static/images/Cat/Makeup_resize.jpg',
+          show: false
+        },
+        {
+          name: 'Nutricode',
+          image: 'static/images/Cat/Nutricode_resize.jpg',
+          show: false
+        },
+        {
+          name: 'Smart And Clean',
+          image: 'static/images/Cat/SmartAndClean_resize.jpg',
+          show: false
+        },
+        {
+          name: 'Aurile',
+          image: 'static/images/Cat/Aurile_resize.jpg',
+          show: false
+        }
+      ]
     }
   },
   mounted () {
-    $('.image').mouseenter(function () {
-      $('.mainImg', this).animate({opacity: 0.1})
-      $('.info', this).animate({opacity: 1, width: '100%', height: '100%'})
-    })
-    $('.image').mouseleave(function () {
-      $('.mainImg', this).animate({opacity: 1})
-      $('.info', this).animate({opacity: 0, width: '10%', height: '10%'})
-    })
+    // $('.image').mouseenter(function () {
+    //   $('.mainImg', this).animate({opacity: 0.1})
+    //   $('.info', this).animate({opacity: 1, width: '100%', height: '100%'})
+    // })
+    // $('.image').mouseleave(function () {
+    //   $('.mainImg', this).animate({opacity: 1})
+    //   $('.info', this).animate({opacity: 0, width: '10%', height: '10%'})
+    // })
   }
 }
 </script>
 <style lang="sass" scoped>
-.image
-  position: relative
-  .info
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    width: 10%
-    height: 10%
-    display: flex
-    justify-content: center
-    align-items: center
-    opacity: 0
+@import 'config'
+
+.container
+  .categories
+    margin: 40px 0
+    display: grid
+    grid-template-columns: auto auto
+    grid-gap: 10px
+    @include bp-mobile
+      grid-template-columns: auto
+    .box
+      position: relative
+      .image
+        img
+          transition: .4s
+        .info
+          position: absolute
+          top: 0
+          left: 0
+          transform: scale(0.1)
+          width: 100%
+          height: 100%
+          opacity: 1
+      .image:hover img
+        opacity: 0.1
+
+.showinfo-enter-active
+  opacity: 1
+  transform: scale(1)
+
 </style>

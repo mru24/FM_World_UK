@@ -1,11 +1,13 @@
 <template>
-  <div class="content">
-    <a href="http://www.joinforfree.me.uk" target="_blank" rel="noreferrer nofollow noopener">
-      <img src="../assets/images/JoinUs.jpg" alt="">
-    </a>
-    <a href="http://www.beautywithme.co.uk" target="_blank" rel="noreferrer nofollow noopener">
-      <img src="../assets/images/ShopOnline.jpg" alt="">
-    </a>
+  <div class="infoContainer">
+    <div class="infoContent">
+      <a href="http://www.joinforfree.me.uk" target="_blank" rel="noreferrer nofollow noopener">
+        <img src="../assets/images/JoinUs.jpg" alt="">
+      </a>
+      <a href="http://www.beautywithme.co.uk" target="_blank" rel="noreferrer nofollow noopener">
+        <img src="../assets/images/ShopOnline.jpg" alt="">
+      </a>
+    </div>
   </div>
 </template>
 
@@ -17,28 +19,31 @@ export default {
 <style lang="sass" scoped>
 @import 'config'
 
-.content
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  width: 80%
-  height: 80%
-  border: 5px solid #6c6c6c
-  color: red
-  a
-    width: 100%
-    background: rgba(#ffffff, 0.7)
-    padding: 5px
-    img
-      display: block
-      height: 50px
-      margin: auto
-      &:first-child
-        margin-bottom: 10px
-      @include bp-mobile
-        height: 35px
+.infoContainer
+  width: 100%
+  height: 100%
+  padding: 30px
+  .infoContent
+    height: 100%
+    padding: 20px 0
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    background: rgba(#ffffff, 0.9)
+    border: 5px solid #6c6c6c
+    a
+      img
+        display: block
+        height: 50px
+        margin: auto
+        opacity: .9
+        border-radius: 18px
         &:first-child
-          margin: auto
+          margin-bottom: 10px
+        @include bp-mobileSM
+          height: 35px
+          &:first-child
+            margin: auto
 
 </style>
