@@ -1,69 +1,101 @@
 <template>
   <div>
     <h2>ONLINE CATALOGUES</h2>
-    <div class="row my-5 p-4 border bg-dark">
-      <div class="col-lg-2 offset-lg-2 bg-secondary">
-        <a href="http://online.fliphtml5.com/zehio/bqxb/" target="_blank" rel="noreferrer nofollow noopener">
-          <img src="../assets/images/cat-1.jpg" alt="" class="img-fluid">
-          <div class="imageCover">click to open</div>
+    <div class="catalogContainer">
+      <div class="catalog" v-for="(catalog, index) in catalogs" :key="index">
+        <!-- catalog -->
+        <a :href="catalog.link" target="_blank" rel="noreferrer nofollow noopener" @mouseenter="catalog.show=true" @mouseleave="catalog.show=false">
+          <img :src="catalog.image" :alt="catalog.name + 'image'" class="img-fluid">
         </a>
-      </div>
-      <div class="col-lg-2 bg-secondary">
-        <a href="http://online.fliphtml5.com/zehio/wlge/" target="_blank" rel="noreferrer nofollow noopener">
-          <img src="../assets/images/cat-2.jpg" alt="" class="img-fluid">
-          <div class="imageCover">click to open</div>
-        </a>
-      </div>
-      <div class="col-lg-2 bg-secondary">
-        <a href="http://online.fliphtml5.com/zehio/vrmi/" target="_blank" rel="noreferrer nofollow noopener">
-          <img src="../assets/images/cat-3.jpg" alt="" class="img-fluid">
-          <div class="imageCover">click to open</div>
-        </a>
-      </div>
-      <div class="col-lg-2 bg-secondary">
-        <a href="http://online.fliphtml5.com/zehio/ibzg/" target="_blank" rel="noreferrer nofollow noopener">
-          <img src="../assets/images/cat-4.jpg" alt="" class="img-fluid">
-          <div class="imageCover">click to open</div>
-        </a>
+        <transition>
+          <div class="imageCover" v-if="catalog.show">
+            <p>click to open</p>
+          </div>
+        </transition>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      catalogs: [
+        {
+          name: 'Product Catalogue No.29 2018',
+          link: 'http://online.fliphtml5.com/zehio/bqxb/',
+          image: 'static/images/Catalogues/cat-1.jpg',
+          show: false
+        },
+        {
+          name: 'Discover the Beauty of Having Healthy Hair',
+          link: 'http://online.fliphtml5.com/zehio/wlge/',
+          image: 'static/images/Catalogues/cat-2.jpg',
+          show: false
+        },
+        {
+          name: 'Nutricode',
+          link: 'http://online.fliphtml5.com/zehio/vrmi/',
+          image: 'static/images/Catalogues/cat-3.jpg',
+          show: false
+        },
+        {
+          name: 'Frederico Mahora - La Collection Royale',
+          link: 'http://online.fliphtml5.com/zehio/ibzg/',
+          image: 'static/images/Catalogues/cat-4.jpg',
+          show: false
+        }
+      ]
+    }
+  }
 }
 </script>
 
 <style lang="sass" scoped>
 @import 'config'
-img
-  display: block
-  margin: 10px auto
-  width: 100%
-  max-width: 400px
-  position: relative
-.imageCover
-  position: absolute
-  top: 50%
-  left: 50%
-  transform: translate(-50%,-50%)
-  width: 10%
-  height: 10%
-  display: flex
-  text-align: center
-  align-items: center
-  justify-content: center
-  color: white
-  background: rgba(#282828, 0.7)
-  border: $borderFt
-  opacity: 0
-  transition: .5s
-  pointer-events: none
 
-img:hover ~ .imageCover
-  width: 70%
-  height: 80%
-  opacity: 1
+.catalogContainer
+  background: #444
+  margin: 40px 0
+  padding: 20px
+  display: flex
+  flex-direction: row
+  justify-content: center
+  .catalog
+    position: relative
+    margin-right: 10px
+    img
+      display: block
+      width: 100%
+      max-width: 400px
+    .imageCover
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      padding: 20px
+      background: rgba(#f5f5f5, 0.8)
+      pointer-events: none
+      p
+        width: 100%
+        height: 100%
+        border: $borderFt
+        display: flex
+        justify-content: center
+        align-items: center
+
+.v-enter-active
+  animation: fadeIn .5s
+.v-leave-active
+  animation: fadeIn .3s reverse
+
+@keyframes fadeIn
+  from
+    transform: scale(.1)
+    opacity: .1
+  to
+    transform: scale(1)
+    opacity: 1
 </style>

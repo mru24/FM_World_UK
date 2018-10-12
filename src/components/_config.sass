@@ -6,7 +6,7 @@
     @content
 
 @mixin bp-mobileSM
-  @media only screen and (max-width: 750px)
+  @media only screen and (max-width: 575px)
     @content
 
 // VARIABLES
@@ -14,3 +14,10 @@ $borderLt: 1px solid #bbb
 $borderFt: 4px solid #bbb
 
 $shadowLt: 4px 4px 5px #bbb
+
+.container
+  width: 80%
+  margin: auto
+  padding: 0
+  @include bp-mobileSM
+    width: 100%

@@ -5,14 +5,11 @@
         <div class="box" v-for="(cat, index) in categories" :key="index">
           <div class="image" @mouseenter="cat.show=true" @mouseleave="cat.show=false">
             <img class="mainImg" :src="cat.image" :alt="cat.name + 'image'" width="100%">
-            <div v-if="cat.show">
-              <transition name="showinfo">
-                <div class="info">
-                  <infoContent />
-                </div>
-              </transition>
-            </div>
-
+            <transition>
+              <div class="info" v-if="cat.show">
+                <infoContent />
+              </div>
+            </transition>
           </div>
         </div>
       </div>
@@ -39,49 +36,40 @@ export default {
       categories: [
         {
           name: 'Fragrances',
-          image: 'static/images/Cat/Fragrances_resize.jpg',
+          image: 'static/images/Categories/Fragrances_resize.jpg',
           show: false
         },
         {
           name: 'Face And Body Care',
-          image: 'static/images/Cat/FaceAndBody_Care_resize.jpg',
+          image: 'static/images/Categories/FaceAndBody_Care_resize.jpg',
           show: false
         },
         {
           name: 'Make Up',
-          image: 'static/images/Cat/Makeup_resize.jpg',
+          image: 'static/images/Categories/Makeup_resize.jpg',
           show: false
         },
         {
           name: 'Nutricode',
-          image: 'static/images/Cat/Nutricode_resize.jpg',
+          image: 'static/images/Categories/Nutricode_resize.jpg',
           show: false
         },
         {
           name: 'Smart And Clean',
-          image: 'static/images/Cat/SmartAndClean_resize.jpg',
+          image: 'static/images/Categories/SmartAndClean_resize.jpg',
           show: false
         },
         {
           name: 'Aurile',
-          image: 'static/images/Cat/Aurile_resize.jpg',
+          image: 'static/images/Categories/Aurile_resize.jpg',
           show: false
         }
       ]
     }
-  },
-  mounted () {
-    // $('.image').mouseenter(function () {
-    //   $('.mainImg', this).animate({opacity: 0.1})
-    //   $('.info', this).animate({opacity: 1, width: '100%', height: '100%'})
-    // })
-    // $('.image').mouseleave(function () {
-    //   $('.mainImg', this).animate({opacity: 1})
-    //   $('.info', this).animate({opacity: 0, width: '10%', height: '10%'})
-    // })
   }
 }
 </script>
+
 <style lang="sass" scoped>
 @import 'config'
 
@@ -97,20 +85,27 @@ export default {
       position: relative
       .image
         img
-          transition: .4s
+          transition: .6s
         .info
           position: absolute
           top: 0
           left: 0
-          transform: scale(0.1)
           width: 100%
           height: 100%
-          opacity: 1
       .image:hover img
         opacity: 0.1
 
-.showinfo-enter-active
-  opacity: 1
-  transform: scale(1)
+.v-enter-active
+  animation: fadeIn .5s
+.v-leave-active
+  animation: fadeIn .3s reverse
+
+@keyframes fadeIn
+  from
+    opacity: 0
+    transform: scale(.1)
+  to
+    opacity: 1
+    transform: scale(1)
 
 </style>

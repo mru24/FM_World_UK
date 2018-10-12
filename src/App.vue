@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <appHeader />
-    <router-view/>
+    <transition name="main">
+      <router-view/>
+    </transition>
     <back-to-top text="Back to top" visibleoffset="150"></back-to-top>
     <appFooter />
   </div>
@@ -13,12 +15,6 @@ export default {
   components: {
     appHeader,
     appFooter
-  },
-  mounted () {
-    this.$nextTick(() => {
-      $('.container').hide()
-      $('.container').fadeIn(1200)
-    })
   }
 }
 </script>
@@ -27,4 +23,14 @@ export default {
   box-sizing: border-box
 body
   font-family: 'Montserrat', sans-serif
+
+.main-enter-active
+  animation: mainFadeIn 1s
+.main-leave-active
+  animation: mainFadeIn 1s reverse
+@keyframes mainFadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
 </style>

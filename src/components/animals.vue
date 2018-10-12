@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div class="row m-lg-4 p-lg-4 ">
-      <div class="col p-4">
+      <div class="animals">
         <h6>*IMPORTANT INFORMATION FOR ANIMALS LOVERS</h6>
         <p class="small">
           If you love animals,  we have some fantastic news for you. Because FM World love animals too, we don’t test our fm perfume or fm cosmetic products on them, and never have done.<br>
@@ -10,7 +9,6 @@
           With FM Cosmetics , you can care for yourself and your pets.
         </p>
       </div>
-    </div>
   </div>
 </template>
 
@@ -21,6 +19,8 @@ export default {
 
 <style lang="sass" scoped>
 @import 'config'
-.col
+
+.animals
   border: $borderFt
+  padding: 20px
 </style>
