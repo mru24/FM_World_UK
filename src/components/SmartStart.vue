@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <h4 class="mt-5">FIRST 10 DAYS OFFER</h4>
+      <h4 class="mt-5">SMART START OFFERS</h4>
       <div class="row my-5">
         <div class="col-lg-4" v-for="(image, index) in images" :key="index">
           <div class="imageContainer">
