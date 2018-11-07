@@ -45,7 +45,7 @@
       <div class="row">
         <div class="col">
           <div class="copyrights">
-            Design and development: <a href="http://wwproject.c0.pl" target="_blank" rel="noreferrer nofollow noopener">WWProject Studio &copy;2018</a>
+            Design and development: <a href="http://wwproject.eu" target="_blank" rel="noreferrer nofollow noopener">WWProject Studio &copy;2018</a>
           </div>
         </div>
       </div>
